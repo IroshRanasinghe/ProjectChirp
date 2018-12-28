@@ -5,8 +5,8 @@
  */
 package Controller;
 
-import DB.DB;
-import POJOS.User;
+import model.DB.DB;
+import model.POJOS.User;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import net.iharder.Base64;

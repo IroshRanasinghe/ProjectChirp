@@ -10,6 +10,23 @@
        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
 
     <bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping"/>
+    <!--Controller classes-->
+    <bean name ="viewPostController"
+          class="Controller.ViewPostController" 
+    /> 
+    
+    <bean name="signUpServletController"
+          class="Controller.SignUpServletController"
+    />
+    <bean name="signInServletController"
+          class="Controller.SignInServletController"
+    />
+    <bean name="logoutServletController"
+          class="Controller.LogoutServletController"
+    />
+    <bean name="postAddServletController"
+          class="Controller.PostAddServletController"
+    />
 
     <!--
     Most controllers will use the ControllerClassNameHandlerMapping above, but
@@ -29,6 +46,8 @@
                 <prop key="Signin.htm">signInServletController</prop>
                 <prop key="Logout.htm">logoutServletController</prop>
                 <prop key="Postadd.htm">postAddServletController</prop>
+                <prop key="Postview.htm">viewPostController</prop>
+                
             </props>
         </property>
     </bean>
@@ -66,19 +85,6 @@
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="postsearch"/>
     
-    <!--Controller classes-->
     
-    <bean name="signUpServletController"
-          class="Controller.SignUpServletController"
-    />
-    <bean name="signInServletController"
-          class="Controller.SignInServletController"
-    />
-    <bean name="logoutServletController"
-          class="Controller.LogoutServletController"
-    />
-    <bean name="postAddServletController"
-          class="Controller.PostAddServletController"
-    />
 
 </beans>

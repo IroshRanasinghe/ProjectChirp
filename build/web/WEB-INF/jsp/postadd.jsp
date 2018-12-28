@@ -3,7 +3,8 @@
     Created on : Dec 24, 2018, 7:09:52 PM
     Author     : IroshaNa Ranasinghe
 --%>
-<%@page import="DB.DB"%>
+
+<%@page import="model.DB.DB"%>
 <%@page import="org.hibernate.Session"%>
 <%
     if (request.getSession().getAttribute("user") != null) {

@@ -7,7 +7,7 @@
     <property name="hibernate.connection.url">jdbc:mysql://localhost:3307/chirpdb?zeroDateTimeBehavior=convertToNull</property>
     <property name="hibernate.connection.username">root</property>
     <property name="hibernate.connection.password">1997</property>
-    <mapping resource="POJOS/User.hbm.xml"/>
-    <mapping resource="POJOS/Post.hbm.xml"/>
+    <mapping resource="model/POJOS/User.hbm.xml"/>
+    <mapping resource="model/POJOS/Post.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

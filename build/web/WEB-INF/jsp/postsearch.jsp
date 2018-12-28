@@ -3,16 +3,15 @@
     Created on : Dec 25, 2018, 11:54:11 PM
     Author     : IroshaNa Ranasinghe
 --%>
-
+<%@page import="model.POJOS.Post"%>
+<%@page import="model.DB.DB"%>
 <%@page import="java.util.List"%>
 <%@page import="org.hibernate.criterion.Projections"%>
 <%@page import="org.hibernate.criterion.Projection"%>
 <%@page import="org.hibernate.criterion.Order"%>
 <%@page import="org.hibernate.criterion.MatchMode"%>
 <%@page import="org.hibernate.criterion.Restrictions"%>
-<%@page import="POJOS.Post"%>
 <%@page import="org.hibernate.Criteria"%>
-<%@page import="DB.DB"%>
 <%@page import="org.hibernate.Session"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

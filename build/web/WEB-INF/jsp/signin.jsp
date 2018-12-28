@@ -14,6 +14,8 @@
         <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <!--sweet alert-->
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <!--Anjular JS-->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js">"></script>
         <title>Sign In</title>
     </head>
     <body>
@@ -61,7 +63,7 @@
                         <h2>Sign In</h2>
                     </div>
                     <div class="panel-body">
-                        <form action="Signin.htm" method="POST" name="signinForm">
+                        <form action="Signin.htm" method="POST">
                             <center>
                                 <img src="../img/user.png" alt="User Image" style="width: 50%;" class="img-responsive" />
                             </center>

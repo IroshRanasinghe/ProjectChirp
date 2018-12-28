@@ -1,5 +1,5 @@
-package POJOS;
-// Generated Dec 24, 2018 11:14:08 AM by Hibernate Tools 4.3.1
+package model.POJOS;
+// Generated Dec 28, 2018 3:33:21 PM by Hibernate Tools 4.3.1
 
 
 

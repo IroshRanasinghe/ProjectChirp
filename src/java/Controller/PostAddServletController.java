@@ -5,9 +5,9 @@
  */
 package Controller;
 
-import DB.DB;
-import POJOS.Post;
-import POJOS.User;
+import model.DB.DB;
+import model.POJOS.Post;
+import model.POJOS.User;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.servlet.http.HttpServletRequest;
@@ -50,6 +50,7 @@ public class PostAddServletController extends AbstractController {
 
         ses.save(p);
         tr.commit();
+        
         model = new ModelAndView("index");
 
         return model;

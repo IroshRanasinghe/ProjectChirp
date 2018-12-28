@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package DB;
+package model.DB;
 
 import org.hibernate.Session;
 
@@ -17,7 +17,7 @@ public class DB {
 
     public static Session getSession() {
         if (session == null) {
-            session = Connection.FactoryManager.getSessionFactory().openSession();
+            session = model.Connection.FactoryManager.getSessionFactory().openSession();
         }
         return session;
     }

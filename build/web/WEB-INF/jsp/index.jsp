@@ -1,13 +1,16 @@
+<%@page import="model.POJOS.Post"%>
+<%@page import="model.DB.DB"%>
 <%@page import="java.util.Set"%>
 <%@page import="java.util.List"%>
 <%@page import="org.hibernate.criterion.Order"%>
 <%@page import="org.hibernate.criterion.Restrictions"%>
-<%@page import="POJOS.Post"%>
+
 <%@page import="org.hibernate.Criteria"%>
-<%@page import="DB.DB"%>
+
 <%@page import="org.hibernate.Session"%>
-<%@page import="POJOS.User"%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
     "http://www.w3.org/TR/html4/loose.dtd">
@@ -22,7 +25,8 @@
         <!--<link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css"/>-->
         <!--sweet alert-->
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
+        <script>
+        </script>
     </head>
 
     <body>
@@ -43,6 +47,7 @@
                         <ul class="nav navbar-nav">
                             <li ><a href="index.htm">Home</a></li>
                             <li><a href="postadd.htm">Post Ad</a></li>
+                            <li><a href="Postview.htm">view add</a></li>
                         </ul>
                         <form class="navbar-form navbar-left" action="postsearch.htm" method="POST">
                             <div class="input-group">
@@ -74,31 +79,26 @@
 
             <div>
 
-                <h2 class="text-center text-capitalize"> Latest Advertisements</h2>
+
 
                 <div class="col-md-2"></div>
                 <div class="col-md-8">
-                    <%
-                        Session s = DB.getSession();
-                        Criteria postCriteria = s.createCriteria(Post.class);
-                        postCriteria.add(Restrictions.eq("status", "active"));
-                        postCriteria.addOrder(Order.desc("date"));
-                        List<Post> postList = postCriteria.list();
-                        for (Post post : postList) {
-                    %>
-                    <div class="panel panel-success">
-                        <div class="panel-heading">
-                            <h2><b><%=post.getTitle()%></b></h2>
-                            <h5><%=post.getDate()%></h5>
-                        </div>
-                        <div class="panel-body">
-                            <p><%=post.getDescription()%></p>
-                        </div>
+                    <a class="btn btn-primary btn-block" href="Postview.htm">View Advertisements &nbsp;<i class="fa fa-eye"></i></a>
+                    <br>
+                    <c:forEach var="p" items="${post}">
+                        <div class="panel panel-success">
+                            <div class="panel-heading">
+                                <h2><b><c:out value="${p.getTitle()}"></c:out></b></h2>
+                                <p><c:out value="${p.getDate()}"></c:out></p>
+                                <p>@<c:out value="${p.getUser().getName()}"></c:out></p>
+                                </div>
+                                <div class="panel-body">
+                                    <p><c:out value="${p.getDescription()}"></c:out></p>
+                                </div>
 
-                    </div>
-                    <%
-                        }
-                    %>
+                            </div>
+                    </c:forEach>
+
                 </div>
                 <div class="col-md-2"></div>
 
@@ -110,4 +110,5 @@
         <script src="../js/jquery-2.1.4.min.js" type="text/javascript"></script>
         <script src="../js/bootstrap.min.js" type="text/javascript"></script>
     </body>
+</body>
 </html>
