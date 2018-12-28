@@ -16,8 +16,10 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Welcome to Spring Web MVC project</title>
-        <!--Bootstrap style-->       
-        <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <!--Bootstrap style-->   
+        <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" integrity="sha384-PmY9l28YgO4JwMKbTvgaS7XNZJ30MK9FAZjjzXtlqyZCqBY6X6bXIkM++IkyinN+" crossorigin="anonymous">
+        <!--<link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css"/>-->
         <!--sweet alert-->
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 

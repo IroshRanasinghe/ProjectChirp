@@ -34,7 +34,7 @@
                         <li ><a href="index.htm">Home</a></li>
                         <li><a href="postadd.htm">Post Ad</a></li>
                     </ul>
-                    
+
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="Home.jsp"><span> </span></a></li>
                         <li><a href="signup.htm"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
@@ -61,16 +61,23 @@
                         <h2>Sign In</h2>
                     </div>
                     <div class="panel-body">
-                        <form action="Signin.htm" method="POST">
+                        <form action="Signin.htm" method="POST" name="signinForm">
                             <center>
                                 <img src="../img/user.png" alt="User Image" style="width: 50%;" class="img-responsive" />
                             </center>
                             <br>
                             <div class="form-group">
-                                <input type="email" placeholder="Email here" name="email" class="form-control" required/>
+                                <input type="email" placeholder="Email here" name="email" ng-model="email" class="form-control" required/>
+                                <span style="color: red;" ng-show="signinForm.email.$dirty && signinForm.email.$invalid">
+                                    <span ng-show="signinForm.email.$error.required">Email is required.</span>
+                                    <span ng-show="signinForm.email.$error.email">Invalid Email address.</span>
+                                </span>
                             </div>
                             <div class="form-group">
                                 <input type="password" placeholder="Password here" name="password" class="form-control" required/>
+                                <span style="color: red;" ng-show="signinForm.password.$dirty && signinForm.password.$invalid">
+                                    <span ng-show="signinForm.password.$error.required">Password is required</span>
+                                </span>
                             </div>
                             <div class="form-group">
                                 <input type="submit" value="Sign In" class="btn btn-danger btn-block" />

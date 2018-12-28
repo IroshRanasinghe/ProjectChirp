@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!-- was: <?xml version="1.0" encoding="UTF-8"?> -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+
+    <bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping"/>
+
+    <!--
+    Most controllers will use the ControllerClassNameHandlerMapping above, but
+    for the index controller we are using ParameterizableViewController, so we must
+    define an explicit mapping for it.
+    -->
+    <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="mappings">
+            <props>
+                <prop key="index.htm">indexController</prop>
+                <prop key="signup.htm">signUpController</prop>
+                <prop key="signin.htm">signInController</prop>
+                <prop key="postadd.htm">postAddController</prop>
+                <prop key="postsearch.htm">postSearchController</prop>
+                
+                <prop key="Signup.htm">signUpServletController</prop>
+                <prop key="Signin.htm">signInServletController</prop>
+                <prop key="Logout.htm">logoutServletController</prop>
+                <prop key="Postadd.htm">postAddServletController</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="viewResolver"
+          class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+          p:prefix="/WEB-INF/jsp/"
+          p:suffix=".jsp" />
+
+    <!--
+    The index controller.
+    -->
+    <bean name="indexController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="index" />
+    <!--
+    The sign up controller.
+    -->
+    <bean name="signUpController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="signup"/>
+ 
+    <!--
+    The sign in controller.
+    -->
+    <bean name="signInController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="signin"/>
+    
+    <bean name="postAddController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="postadd"/>
+    
+    <bean name="postSearchController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="postsearch"/>
+    
+    <!--Controller classes-->
+    
+    <bean name="signUpServletController"
+          class="Controller.SignUpServletController"
+    />
+    <bean name="signInServletController"
+          class="Controller.SignInServletController"
+    />
+    <bean name="logoutServletController"
+          class="Controller.LogoutServletController"
+    />
+    <bean name="postAddServletController"
+          class="Controller.PostAddServletController"
+    />
+
+</beans>
