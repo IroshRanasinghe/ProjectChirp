@@ -14,11 +14,10 @@
         <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <!--sweet alert-->
         <!--<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>-->
-        <!--Anjular JS-->
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js">"></script>
+
         <title>Sign In</title>
     </head>
-    <body>
+    <body ng-app="">
         <!--NAVIGATION BAR-->
         <nav class="navbar navbar-inverse">
             <div class="container-fluid">
@@ -106,6 +105,8 @@
         <!--jQuery 2.2.0-->
         <script src="../js/jquery-2.1.4.min.js" type="text/javascript"></script>
         <script src="../js/bootstrap.min.js" type="text/javascript"></script>
+        <!--Anjular JS-->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 
     </body>
 </html>
