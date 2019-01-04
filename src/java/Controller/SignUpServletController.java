@@ -55,6 +55,7 @@ public class SignUpServletController extends AbstractController {
 
                 model = new ModelAndView("index");
             } else {
+                model = new ModelAndView("signup");
                 model.addObject("error", "User already exsist");
             }
         } else {
