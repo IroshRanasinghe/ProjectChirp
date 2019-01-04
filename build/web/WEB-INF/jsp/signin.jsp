@@ -15,7 +15,7 @@
         <!--sweet alert-->
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <!--Anjular JS-->
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js">"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
         <title>Sign In</title>
     </head>
     <body>
