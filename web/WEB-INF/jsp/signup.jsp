@@ -123,7 +123,8 @@
             </div>
         </div>
         <div class="col-xs-3"></div>
-         <script type="text/javascript">
+
+        <script type="text/javascript">
             function checkPW() {
             var pw1 = document.getElementById('pw1').value;
             var pw2 = document.getElementById('pw2').value;
@@ -136,4 +137,5 @@
         <script src="../js/bootstrap.min.js" type="text/javascript"></script>
         <!--Anjular JS-->
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js">"></script>
+    </body>
 </html>
