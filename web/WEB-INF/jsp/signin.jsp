@@ -13,9 +13,9 @@
         <!--Bootstrap style-->       
         <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <!--sweet alert-->
-        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <!--<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>-->
         <!--Anjular JS-->
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js">"></script>
         <title>Sign In</title>
     </head>
     <body>
@@ -63,7 +63,7 @@
                         <h2>Sign In</h2>
                     </div>
                     <div class="panel-body">
-                        <form action="Signin.htm" method="POST">
+                        <form action="Signin.htm" method="POST" name="signinForm">
                             <center>
                                 <img src="../img/user.png" alt="User Image" style="width: 50%;" class="img-responsive" />
                             </center>
@@ -88,12 +88,17 @@
                         </form>
                     </div>
                 </div>
-                <div class="alert alert-danger fade in alert-dismissable">
-                    <a href="#"  class="close" data-dismiss="alert" aria-label="close" style="text-decoration:none;">&times;</a>
-                    <center>
-                        <strong>Error!</strong><br>${error}
-                    </center>
-                </div>
+                <c:choose>
+                    <c:when test="${not empty error}">
+                        <div class="alert alert-danger fade in alert-dismissable">
+                            <a href="#"  class="close" data-dismiss="alert" aria-label="close" style="text-decoration:none;">&times;</a>
+                            <center>
+                                <strong>Error!</strong><br>${error}
+                            </center>
+                        </div>
+                    </c:when>
+                </c:choose>
+
                 <h2></h2>
             </div>
             <div class="col-md-4"></div>
